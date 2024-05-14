@@ -33,24 +33,6 @@ export default function SignUp() {
 return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md gap-2">
       <form className="animate-in flex-1 flex flex-col w-full gap-2 text-foreground pt-24">
-          <div className="flex flex-col m-0">
-            <label className="text-md" htmlFor="firstname">First Name</label>
-            <input
-                className="rounded-md px-4 py-2 bg-inherit border mb-6"
-                name="firstname"
-                placeholder="First Name"
-                required 
-            />
-          </div>
-          <div className="flex flex-col">
-            <label className="text-md" htmlFor="lastname">Last Name</label>
-            <input
-                className="rounded-md px-4 py-2 bg-inherit border mb-6"
-                name="lastname"
-                placeholder="Last Name"
-                required 
-            />
-          </div>
         <label className="text-md" htmlFor="email">Email</label>
         <input
             className="rounded-md px-4 py-2 bg-inherit border mb-6"
