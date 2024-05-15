@@ -55,7 +55,7 @@ export default function Login({
           placeholder="••••••••"
           required
         />
-        <a href={'/resetpassword'} className="text-xs ml-auto">Forgot Password?</a>
+        <a href={'login/forgotpassword'} className="text-xs ml-auto">Forgot Password?</a>
         <SubmitButton
           formAction={signIn}
           className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
