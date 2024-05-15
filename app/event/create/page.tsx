@@ -113,18 +113,13 @@ export default async function CreateEvent(){
                     />
                 </div>
 
-                <div>
+                <div >
                     <label className="text-lg mr-2" htmlFor="image">Image</label>
-                    <input
-                        className="rounded-md px-4 py-2 bg-inherit border mb-6"
-                        name="image"
-                        placeholder="Image"
-                        required
-                    />
+                    <input type="file" accept="image/*" name="eventPicture" required />
                 </div>
                 <button
                     formAction={createEvent}
-                    className="text-center border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2 "
+                    className="text-center border border-foreground/20 rounded-md px-4 py-2 mt-5 text-foreground mb-2 "
                 >
                     Create Event
                 </button>

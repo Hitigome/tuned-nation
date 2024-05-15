@@ -1,7 +1,7 @@
 {
-  "/event/create/page": "app/event/create/page.js",
-  "/login/page": "app/login/page.js",
-  "/signup/page": "app/signup/page.js",
   "/login/forgotpassword/page": "app/login/forgotpassword/page.js",
-  "/resetpassword/page": "app/resetpassword/page.js"
+  "/event/create/page": "app/event/create/page.js",
+  "/resetpassword/page": "app/resetpassword/page.js",
+  "/login/page": "app/login/page.js",
+  "/signup/page": "app/signup/page.js"
 }
