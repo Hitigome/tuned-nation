@@ -21,7 +21,7 @@ export default async function CreateEvent(){
         console.log(image.name);
 
 
-        const { data: imageURL } = await supabase.storage.from('event-image').getPublicUrl(image.name, {download: true});
+        const { data: imageURL } = await supabase.storage.from('event-image').getPublicUrl(image.name);
         
 
         const file = formData.get("image") as File;
