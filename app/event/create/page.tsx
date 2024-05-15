@@ -10,7 +10,7 @@ export default async function CreateEvent(){
         const supabase = createClient();
     
         const formData = new FormData(event.currentTarget);
-        const { error } = await supabase.from("Event").insert([
+        const { data, error } = await supabase.from("Event").insert([
             {
                 name: formData.get("name"),
                 host: formData.get("host"),
