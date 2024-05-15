@@ -17,7 +17,14 @@ export default async function CreateEvent(){
         const start_time = formData.get("start_time");
         const end_time = formData.get("end_time");
         const location = formData.get("location");
-        const image = formData.get("image");
+        const image = formData.get("image") as File;
+
+        const { error: uploadError } = await supabase.storage.from("event-image").upload(`image/${image}`, image);
+
+        if(uploadError) {
+            console.log(uploadError);
+            return redirect("/event/create?message=Could not create event");
+        }
 
         console.log(name, host, description, date, start_time, end_time, location, image);
         const { error } = await supabase.from("Event").insert(
