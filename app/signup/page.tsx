@@ -22,6 +22,7 @@ export default function SignUp() {
         });
     
         if (error) {
+          console.log(error);
           return redirect("/login?message=Could not authenticate user");
         }
     
@@ -48,12 +49,12 @@ return (
         />  
 
 
-        <SubmitButton
+        <button
             formAction={signUp}
             className="text-center border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2 "
         >
             Sign Up
-        </SubmitButton>
+        </button>
       </form>
     </div>
   );

@@ -18,11 +18,11 @@ const EventCard: React.FC<EventsPageProps> = ({ events }) => {
     <ul className="flex flex-wrap justify-center md:justify-start">
     {events && events.map(event => (
         <li key={event.id} 
-        className="border-2 border-solid border-white rounded-lg w-80 h-80 mb-3 md:mr-5 text-center">
+        className="border-2 border-solid border-white rounded-lg w-80 mb-3 md:mr-5 text-center">
         <div>
         </div>
         <div className='h-auto'>
-          <img width='350px' height='150px' src='/IMG_4328.jpg' className="object-cover" style={{height:'80%'}} />
+          <img width='350px' height='150px' src={event.image} className="object-cover" style={{height:'80%'}} />
         </div>
         <div className='text-2xl'>{event.name}</div>
         <div>Date: {event.date}</div>
