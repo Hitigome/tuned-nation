@@ -4,7 +4,7 @@
       "workers": {
         "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!",
         "app/login/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fapp%2Flogin%2Fpage.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%2C%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!",
-        "app/event/create/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!",
+        "app/event/create/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fapp%2Fevent%2Fcreate%2Fpage.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%2C%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!",
         "app/_not-found/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
@@ -20,6 +20,22 @@
       },
       "layer": {
         "app/login/page": "rsc"
+      }
+    },
+    "526ecb1f30fb77d6023f2eb5488fce8617f80104": {
+      "workers": {
+        "app/event/create/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fapp%2Fevent%2Fcreate%2Fpage.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%2C%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/event/create/page": "rsc"
+      }
+    },
+    "2123239c34a3ecaadd76cbd8e246877ec9a0f42a": {
+      "workers": {
+        "app/event/create/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fapp%2Fevent%2Fcreate%2Fpage.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%2C%5B%22%2FUsers%2Fhitigome%2Ftuned-nation%2Fcomponents%2FAuthButton.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/event/create/page": "rsc"
       }
     }
   },
