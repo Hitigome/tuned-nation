@@ -18,10 +18,19 @@ export default async function CreateEvent(){
         const end_time = formData.get("end_time");
         const location = formData.get("location");
         const image = formData.get("image") as File;
+        console.log(image.name);
 
-        const { error: uploadError } = await supabase.storage.from("event-image").upload(`image/${image}`, image);
 
-        if(uploadError) {
+        const { data: imageURL } = await supabase.storage.from('event-image').getPublicUrl(image.name, {download: true});
+        
+
+        const file = formData.get("image") as File;
+        const blob = new Blob([file], { type: file.type });
+        
+        const { error: uploadError } = await supabase.storage.from("event-image").upload(image.name, blob);
+
+        console.log(imageURL.publicUrl)
+        if (uploadError) {
             console.log(uploadError);
             return redirect("/event/create?message=Could not create event");
         }
@@ -36,7 +45,7 @@ export default async function CreateEvent(){
                 start_time,
                 end_time,
                 location,
-                image,
+                image: imageURL.publicUrl,
             }
         );
     
@@ -45,7 +54,7 @@ export default async function CreateEvent(){
             return redirect("/event/create?message=Could not create event");
         }
     
-        return redirect("/event/create?message=Event created successfully");
+        return redirect("/?message=Event created successfully");
     };
     
     return (
@@ -122,7 +131,7 @@ export default async function CreateEvent(){
 
                 <div >
                     <label className="text-lg mr-2" htmlFor="image">Image</label>
-                    <input type="file" accept="image/*" name="eventPicture" required />
+                    <input type="file" accept="image/*" name="image" required />
                 </div>
                 <button
                     formAction={createEvent}
