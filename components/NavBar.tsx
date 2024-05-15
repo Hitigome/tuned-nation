@@ -1,5 +1,4 @@
 import AuthButton from "../components/AuthButton";
-import DeployButton from "../components/DeployButton";
 
 export default function NavBar() {
     return (
