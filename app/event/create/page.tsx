@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { NextPage } from "next";
 import { redirect } from "next/navigation";
+import test from "node:test";
 
 
 export default async function CreateEvent(){
@@ -18,6 +19,7 @@ export default async function CreateEvent(){
         const location = formData.get("location");
         const image = formData.get("image");
 
+        console.log(name, host, description, date, start_time, end_time, location, image);
         const { error } = await supabase.from("Event").insert(
             {
                 name,
@@ -32,6 +34,7 @@ export default async function CreateEvent(){
         );
     
         if (error) {
+            console.log(error);
             return redirect("/event/create?message=Could not create event");
         }
     
@@ -76,7 +79,7 @@ export default async function CreateEvent(){
                     <input
                         className="rounded-md px-4 py-2 bg-inherit border mb-6"
                         name="date"
-                        placeholder="Date"
+                        placeholder="mm/dd/yyyy"
                         required
                     />
                 </div>
