@@ -22,6 +22,7 @@ export default function Login({
     });
 
     if (error) {
+      console.log(error);
       return redirect("/login?message=Could not authenticate user");
     }
 
@@ -48,12 +49,13 @@ export default function Login({
           Password
         </label>
         <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
+          className="rounded-md px-4 py-2 bg-inherit border mb-1"
           type="password"
           name="password"
           placeholder="••••••••"
           required
         />
+        <a href={'login/forgotpassword'} className="text-xs ml-auto">Forgot Password?</a>
         <SubmitButton
           formAction={signIn}
           className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"

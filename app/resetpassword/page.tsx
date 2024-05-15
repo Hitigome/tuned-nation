@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js"; // Add the missing import statement for 'supabase'
+import { createClient } from "@supabase/supabase-js"; 
 
 export default function ResetPassword() {
 
