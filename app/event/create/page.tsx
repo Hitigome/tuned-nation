@@ -4,12 +4,12 @@ import { redirect } from "next/navigation";
 
 
 export default async function CreateEvent(){
-    
+
     const createEvent = async (event: React.FormEvent<HTMLFormElement>) => {
         "use server"
         const supabase = createClient();
     
-        const formData = new FormData();
+        const formData = new FormData(event.currentTarget);
         const { error } = await supabase.from("Event").insert([
             {
                 name: formData.get("name"),
