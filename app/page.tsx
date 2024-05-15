@@ -1,9 +1,7 @@
 import { getEvents } from '../app/actions/index';
 import EventCard from '@/components/eventCard';
-import { cookies } from 'next/headers';
 
 export default async function Index() {
-  const cookieStore = cookies();
 
   const {data: events} = await getEvents();
 

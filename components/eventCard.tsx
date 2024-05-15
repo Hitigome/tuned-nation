@@ -1,4 +1,3 @@
-import { createClient } from '@/utils/supabase/server';
 
 interface EventsPageProps {
   events: {
@@ -13,7 +12,6 @@ interface EventsPageProps {
   }[];
 }
 
-const supabase = createClient();
 
 const EventCard: React.FC<EventsPageProps> = ({ events }) => {
   return (
