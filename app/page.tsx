@@ -1,5 +1,9 @@
+import { getEvents } from '../app/actions/index';
+import EventCard from '@/components/eventCard';
 
 export default async function Index() {
+
+  const {data: events} = await getEvents();
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
@@ -11,8 +15,7 @@ export default async function Index() {
           </div>
 
           <h2 className="text-3xl mt-5 ml-2">Events</h2>
-          
-
+          <EventCard events={events || []}/>
         </main>
       </div>
     </div>
