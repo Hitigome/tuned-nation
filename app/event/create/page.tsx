@@ -5,23 +5,31 @@ import { redirect } from "next/navigation";
 
 export default async function CreateEvent(){
 
-    const createEvent = async (event: React.FormEvent<HTMLFormElement>) => {
+    const createEvent = async (formData: FormData) => {
         "use server"
         const supabase = createClient();
     
-        const formData = new FormData(event.currentTarget);
-        const { data, error } = await supabase.from("Event").insert([
+        const name = formData.get("name");
+        const host = formData.get("host");
+        const description = formData.get("description");
+        const date = formData.get("date");
+        const start_time = formData.get("start_time");
+        const end_time = formData.get("end_time");
+        const location = formData.get("location");
+        const image = formData.get("image");
+
+        const { error } = await supabase.from("Event").insert(
             {
-                name: formData.get("name"),
-                host: formData.get("host"),
-                description: formData.get("description"),
-                date: formData.get("date"),
-                start_time: formData.get("start_time"),
-                end_time: formData.get("end_time"),
-                location: formData.get("location"),
-                Image: formData.get("image"),
+                name,
+                host,
+                description,
+                date,
+                start_time,
+                end_time,
+                location,
+                image,
             }
-        ]);
+        );
     
         if (error) {
             return redirect("/event/create?message=Could not create event");
@@ -33,7 +41,7 @@ export default async function CreateEvent(){
     return (
         <div>
             <h1 className="my-5 text-5xl">Create Event</h1>
-            <form className="flex flex-col" onSubmit={createEvent}>
+            <form className="flex flex-col">
                 <div>
                     <label className="text-lg mr-2" htmlFor="name">Name</label>
                     <input
@@ -112,7 +120,7 @@ export default async function CreateEvent(){
                     />
                 </div>
                 <button
-                    type="submit"
+                    formAction={createEvent}
                     className="text-center border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2 "
                 >
                     Create Event
